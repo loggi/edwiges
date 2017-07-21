@@ -3,6 +3,7 @@ from smtplib import SMTP_SSL
 from cornice import Service
 from cornice.validators import colander_body_validator
 
+from edwiges import logger
 from edwiges.schema import EmailSchema
 from edwiges.util import build_message
 
@@ -11,12 +12,14 @@ mail_service = Service(name='mail', path='/mail')
 
 
 @meta_service.get()
-def hello(request):
-    
+def status(request):
+
+    logger.info("Status request received")
+
     settings = request.registry.settings
     host = settings['edwiges.provider_host']
     port = settings['edwiges.provider_port']
-    
+
     with SMTP_SSL(host, port) as smtp:
         try:
             _, status = smtp.noop()
@@ -25,7 +28,7 @@ def hello(request):
         except Exception as e:
             status = 'failed'
             errors = [str(e)]
-    
+
     return {'status': status, 'errors': errors}
 
 
@@ -33,7 +36,10 @@ def hello(request):
 def send_mail(request):
 
     settings = request.registry.settings
-    
+
+    logger.info("Send email request received",
+                extra={'request': request.validated})
+
     host = settings['edwiges.provider_host']
     port = settings['edwiges.provider_port']
     username = settings['edwiges.provider_username']
@@ -51,10 +57,16 @@ def send_mail(request):
             )
             request.validated['status'] = 'sent'
 
+            logger.info("Email sent",
+                        extra={'request': request.validated})
+
         except Exception as e:
             request.validated['status'] = 'failed'
             request.validated['errors'] = [str(e)]
-            
+
+            logger.info("Send email request failed",
+                        extra={'request': request.validated})
+ 
             # Precondition Failed
             request.response.status_code = 412
 

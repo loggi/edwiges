@@ -2,12 +2,14 @@ colander==1.3.3
 cornice==2.4.0
 hupper==1.0
 iso8601==0.1.11
+logmatic-python==0.1.7
 Paste==2.0.3
 PasteDeploy==1.5.2
 PasteScript==2.0.2
 plaster==0.5
 plaster-pastedeploy==0.4.1
 pyramid==1.9.1
+python-json-logger==0.1.7
 repoze.lru==0.6
 simplejson==3.11.1
 six==1.10.0

@@ -3,6 +3,15 @@
 import os
 from setuptools import setup, find_packages
 
+REQUIREMENTS = [
+    'cornice',
+    'colander',
+    'PasteScript',
+    'waitress',
+    'logmatic-python',
+]
+
+
 here = os.path.abspath(os.path.dirname(__file__))
 
 with open(os.path.join(here, 'README.rst')) as f:
@@ -26,7 +35,7 @@ setup(name='edwiges',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=['cornice', 'colander', 'PasteScript', 'waitress'],
+    install_requires=REQUIREMENTS,
     entry_points="""\
     [paste.app_factory]
     main = edwiges:main

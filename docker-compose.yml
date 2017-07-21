@@ -9,4 +9,4 @@ services:
       - EDWIGES_PROVIDER_PASSWORD
     ports:
       - 465:465
-      - 8888:8888
+      - 10085:10085
