@@ -47,6 +47,7 @@ def send_mail(request):
 
     with SMTP_SSL(host, port) as smtp:
         try:
+            smtp.ehlo()
             if username and password:
                 smtp.login(username, password)
 
@@ -66,7 +67,7 @@ def send_mail(request):
 
             logger.info("Send email request failed",
                         extra={'request': request.validated})
- 
+
             # Precondition Failed
             request.response.status_code = 412
 
