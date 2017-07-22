@@ -20,7 +20,7 @@ with open(os.path.join(here, 'README.rst')) as f:
 
 setup(
     name='edwiges',
-    version='0.1.0',
+    version='0.1.1.dev0',
     description='A stupidly simple email REST service.',
     long_description=README,
     classifiers=[
