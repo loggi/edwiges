@@ -81,7 +81,7 @@ Response:
        "status": "2.0.0 OK s6sm4499738qki.44 - gsmtp"
    }
    
-**POST /  -  Server Test**
+**POST /send  -  Send Email**
 
 Request:
 
