@@ -7,7 +7,6 @@ import logmatic
 from pyramid.config import Configurator, ConfigurationError
 
 
-
 REQUIRED_SETTINGS = [
     'edwiges.provider_host',
     'edwiges.provider_port',
@@ -36,11 +35,12 @@ def get_config_environ(name):
 
 def main(global_config, **settings):
 
+    print
     for name in ENV_SETTINGS:
         settings[name] = get_config_environ(name) or settings.get(name)
-        
+
     for name in REQUIRED_SETTINGS:
-        if name not in settings:
+        if settings.get(name) is None:
             error = 'confiration entry for {} is missing'.format(name)
             logger.critical(error)
             raise ConfigurationError(error)
