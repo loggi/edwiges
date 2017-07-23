@@ -1,7 +1,7 @@
 Edwiges
 =======
 
-**Under development**
+**Under development!**
 
 Edwiges is a simple service written in Python/Pyramid/Cornice that can take a REST JSON request and use it to send emails. It does supports attachments and metainfo. 
 
@@ -81,13 +81,16 @@ Response:
        "status": "2.0.0 OK s6sm4499738qki.44 - gsmtp"
    }
    
-**POST /  -  Server Test**
+**POST /mail  -  Send Email**
 
 Request:
 
 .. code-block::
 
-   $ echo '{"sender": "gabsurita@gmail.com", "recipients": ["gabsurita@gmail.com"], "subject": "Grrr", "body": "Hello from edwiges"}' | http -v post localhost:10085/mail
+   $ echo '{"sender": "gabsurita@gmail.com", \
+            "recipients": ["gabsurita@gmail.com"], \
+            "subject": "Grrr", \
+            "body": "Hello from edwiges"}' | http -v post localhost:10085/mail
    POST /mail HTTP/1.1
    Accept: application/json, */*
    Accept-Encoding: gzip, deflate
