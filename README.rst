@@ -3,9 +3,20 @@ Edwiges
 
 **Under development!**
 
-Edwiges is a simple service written in Python/Pyramid/Cornice that can take a REST JSON request and use it to send emails. It does supports attachments and metainfo. 
+Edwiges is a simple service written in Python/Pyramid/Cornice
+that can take a REST JSON request and use it to send emails using SMTP. 
+It does supports attachments and metainfo.
 
-*As long term goals we want Edwiges to be able to handle everything related to an email flow, such as consumable metrics, warnings, rendering templates, scheduling, retrying and so on.*
+The basic premise is that on a microservice architecture we don't want
+all services to be able to send e-mails directly.
+SMTP seems easy at first-glance, but it can get very tricky as you 
+include more complex features. 
+REST is idiomatic and easy to use in most languages, plus, by having
+a separated service, you can get zero-cost monitoring and metrics.
+
+*As long term goals we want Edwiges to be able to handle everything
+related to an email flow, such as consumable metrics, warnings,
+rendering templates, scheduling, retrying and so on.*
 
 .. image:: https://pbs.twimg.com/profile_images/1361293504/coruja.jpg
    :scale: 50 %
@@ -49,7 +60,9 @@ With docker:
 API Quick Reference
 -------------------
 
-*Note: these examples were performed using GMail, responses can change according to the provider. You may need to enable https://myaccount.google.com/lesssecureapps to use Edwiges with Gmail.*
+*Note: these examples were performed using GMail, responses can change 
+according to the provider. You may need to enable 
+https://myaccount.google.com/lesssecureapps to use Edwiges with Gmail.*
 
 **GET /  -  Server Test**
 
