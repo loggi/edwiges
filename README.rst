@@ -143,3 +143,7 @@ Response:
        "subject": "Grrr"
    }
 
+.. note::
+   Authentication has not been implemented yet, at Loggi we currently
+   protect the service API in production using a firewall, but pull requests
+   are very welcome. :)
