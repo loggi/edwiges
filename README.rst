@@ -44,11 +44,6 @@ With docker:
 ------------
 
 .. code-block::
-   
-   
-
-
-.. code-block::
  
     export EDWIGES_PROVIDER_HOST=YOUR_HOST
     export EDWIGES_PROVIDER_USERNAME=YOUR_USER
@@ -64,11 +59,12 @@ API Quick Reference
 according to the provider. You may need to enable 
 https://myaccount.google.com/lesssecureapps to use Edwiges with Gmail.*
 
+
 **GET /  -  Server Test**
 
 Request:
 
-.. code-block::
+.. code-block:: json
 
    $ http -v get localhost:10085
    GET / HTTP/1.1
@@ -80,7 +76,7 @@ Request:
 
 Response:
 
-.. code-block::
+.. code-block:: json
 
    HTTP/1.1 200 OK
    Content-Length: 62
@@ -98,7 +94,7 @@ Response:
 
 Request:
 
-.. code-block::
+.. code-block:: json
 
    $ echo '{"sender": "gabsurita@gmail.com", \
             "recipients": ["gabsurita@gmail.com"], \
@@ -124,7 +120,7 @@ Request:
 
 Response:
 
-.. code-block::
+.. code-block:: json
 
    HTTP/1.1 200 OK
    Content-Length: 139
