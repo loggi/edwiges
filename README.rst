@@ -3,14 +3,19 @@ Edwiges
 
 **Under development!**
 
+|travis|
+
+.. |travis| image:: https://travis-ci.org/loggi/edwiges.svg?branch=master
+    :target: https://travis-ci.org/loggi/edwiges
+
 Edwiges is a simple service written in Python/Pyramid/Cornice
-that can take a REST JSON request and use it to send emails using SMTP. 
+that can take a REST JSON request and use it to send emails using SMTP.
 It does supports attachments and metainfo.
 
 The basic premise is that on a microservice architecture we don't want
 all services to be able to send e-mails directly.
-SMTP seems easy at first-glance, but it can get very tricky as you 
-include more complex features. 
+SMTP seems easy at first-glance, but it can get very tricky as you
+include more complex features.
 REST is idiomatic and easy to use in most languages, plus, by having
 a separated service, you can get zero-cost monitoring and metrics.
 
@@ -28,35 +33,35 @@ Running locally:
 Clone this repository and run:
 
 .. code-block::
-    
+
     export EDWIGES_PROVIDER_HOST=YOUR_HOST
     export EDWIGES_PROVIDER_USERNAME=YOUR_USER
     export EDWIGES_PROVIDER_PASSWORD=YOUR_PASSWORD
-    
+
     python setup.py develop
     pserve edwiges.ini  --reload
 
 .. note::
-    
+
     You can also set the provider information on your .ini file.
 
 With docker:
 ------------
 
 .. code-block::
- 
+
     export EDWIGES_PROVIDER_HOST=YOUR_HOST
     export EDWIGES_PROVIDER_USERNAME=YOUR_USER
     export EDWIGES_PROVIDER_PASSWORD=YOUR_PASSWORD
-    
+
     docker-compose up
 
 
 API Quick Reference
 -------------------
 
-*Note: these examples were performed using GMail, responses can change 
-according to the provider. You may need to enable 
+*Note: these examples were performed using GMail, responses can change
+according to the provider. You may need to enable
 https://myaccount.google.com/lesssecureapps to use Edwiges with Gmail.*
 
 
@@ -89,7 +94,7 @@ Response:
        "errors": [],
        "status": "2.0.0 OK s6sm4499738qki.44 - gsmtp"
    }
-   
+
 **POST /mail  -  Send Email**
 
 Request:
