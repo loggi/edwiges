@@ -10,7 +10,7 @@ plaster==1.0
 plaster-pastedeploy==0.4.2
 pyramid==1.9.1
 python-json-logger==0.1.8
-repoze.lru==0.6
+repoze.lru==0.7
 simplejson==3.11.1
 six==1.10.0
 translationstring==1.3
