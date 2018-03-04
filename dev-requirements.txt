@@ -6,4 +6,4 @@ pytest-cover==3.0.0
 pytest-sugar==0.9.1
 pytest-xdist==1.22.2
 tox==2.9.1
-webtest
+webtest==2.0.29
