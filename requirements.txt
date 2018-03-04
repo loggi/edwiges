@@ -18,4 +18,4 @@ venusian==1.1.0
 waitress==1.1.0
 WebOb==1.7.4
 zope.deprecation==4.3.0
-zope.interface==4.4.2
+zope.interface==4.4.3
