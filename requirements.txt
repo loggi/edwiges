@@ -1,7 +1,7 @@
 colander==1.4
 cornice==3.1.0
 hupper==1.0
-iso8601==0.1.11
+iso8601==0.1.12
 logmatic-python==0.1.7
 Paste==2.0.3
 PasteDeploy==1.5.2
