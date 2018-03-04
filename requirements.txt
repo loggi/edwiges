@@ -7,7 +7,7 @@ Paste==2.0.3
 PasteDeploy==1.5.2
 PasteScript==2.0.2
 plaster==1.0
-plaster-pastedeploy==0.4.1
+plaster-pastedeploy==0.4.2
 pyramid==1.9.1
 python-json-logger==0.1.7
 repoze.lru==0.6
